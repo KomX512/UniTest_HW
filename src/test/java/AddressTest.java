@@ -1,4 +1,7 @@
 import org.junit.jupiter.api.*;
+
+import java.sql.ResultSet;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class AddressTest {
@@ -16,12 +19,17 @@ class AddressTest {
 
     @Test
     void getCity() {
-        Assertions.assertEquals("Казань", "Казань");
+        String expected = "Казань";
+        String result = addressTest.getCity();
+        Assertions.assertEquals(expected, result);
     }
 
     @Test
     void getCountry() {
-        Assertions.assertEquals("Россия", "Россия");
+        String expected = "Россия";
+        String result = addressTest.getCountry();
+
+        Assertions.assertEquals(expected, result);
     }
 
     @AfterEach
